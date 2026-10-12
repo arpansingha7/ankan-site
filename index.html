@@ -1,0 +1,1410 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=5">
+<title>Happy Birthday Ankan! 🕷️</title>
+<meta name="description" content="A special Spider-Man birthday surprise for Ankan's 15th birthday.">
+<meta name="theme-color" content="#0b1330">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🕷️</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bangers&family=Figtree:wght@400;500;600;700;800&display=swap">
+<style>
+:root{
+  --red:#e62429; --red-d:#a3121a; --blue:#2a4fc0; --navy:#0b1330; --navy2:#16224f;
+  --white:#fff; --soft:#cdd6f6; --gold:#ffd23f; --glow:rgba(230,36,41,0.45);
+  --comic:"Bangers","Impact","Arial Narrow",system-ui,sans-serif;
+  --body:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; color:var(--white); font:17px/1.55 var(--body);
+  background:
+    radial-gradient(circle, rgba(255,255,255,.07) 1.3px, transparent 1.8px) 0 0/16px 16px,
+    radial-gradient(120% 60% at 50% 0%, #1d2f7a 0%, transparent 60%),
+    linear-gradient(#0b1330,#1a0a22 70%,#2a0b16);
+  background-attachment:fixed;
+  padding:max(18px,env(safe-area-inset-top)) 16px calc(115px + env(safe-area-inset-bottom));
+  overflow-x:hidden;
+  user-select:none;
+  -webkit-font-smoothing:antialiased;
+}
+body.locked{overflow:hidden;height:100%}
+h1,h2,h3,.comic{font-family:var(--comic);font-weight:400;letter-spacing:.04em;text-transform:uppercase}
+main{max-width:640px;margin:0 auto;display:flex;flex-direction:column;gap:34px;position:relative;z-index:10}
+button{font:inherit;color:inherit;cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+button:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+
+/* Comic panels & buttons */
+.panel{
+  position:relative;background:var(--navy2);border:4px solid #fff;border-radius:18px;
+  box-shadow:8px 8px 0 var(--red), 0 10px 30px rgba(0,0,0,0.5);
+  padding:24px 20px;
+  transition:transform .2s ease;
+}
+.panel:hover{transform:translateY(-2px)}
+.btn{
+  font-family:var(--comic);letter-spacing:.06em;text-transform:uppercase;font-size:22px;
+  background:var(--red);border:3px solid #fff;border-radius:14px;padding:10px 22px;
+  box-shadow:0 5px 0 var(--red-d);transition:transform .08s, box-shadow .08s, filter .15s;
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;white-space:nowrap;
+}
+.btn:hover{filter:brightness(1.08)}
+.btn:active{transform:translateY(4px);box-shadow:0 1px 0 var(--red-d)}
+.btn.blue{background:var(--blue);box-shadow:0 5px 0 #17307d}
+.btn.gold{background:var(--gold);color:#241a00;box-shadow:0 5px 0 #b38b00}
+.btn.small{font-size:16px;padding:7px 14px;border-radius:10px;box-shadow:0 3px 0 var(--red-d)}
+.btn[disabled]{opacity:.5;pointer-events:none}
+h2{font-size:clamp(30px,8vw,42px);margin:0 0 6px;line-height:1;text-shadow:3px 3px 0 var(--red)}
+.sub{color:var(--soft);margin:0 0 14px}
+
+/* Splash */
+#splash{
+  position:fixed;inset:0;z-index:200;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;text-align:center;padding:24px;
+  background:radial-gradient(circle at 50% 40%,#1d2f7a,#070c20 70%);
+  transition:opacity .7s, visibility .7s;
+}
+#splash.gone{opacity:0;visibility:hidden;pointer-events:none}
+#splash .web{position:absolute;width:220px;height:220px;opacity:.35;color:#fff}
+#splash .web.tl{top:0;left:0}
+#splash .web.br{bottom:0;right:0;transform:rotate(180deg)}
+#splash h1{font-size:clamp(40px,12vw,72px);margin:0;line-height:.95;text-shadow:4px 4px 0 var(--red)}
+#splash p{margin:0;color:var(--soft);max-width:320px;font-size:16px}
+.hangspider{animation:sway 2.6s ease-in-out infinite;transform-origin:50% 0;display:flex;flex-direction:column;align-items:center}
+.hangspider i{display:block;width:2px;height:65px;background:#fff;opacity:.85}
+@keyframes sway{50%{transform:rotate(8deg)}0%,100%{transform:rotate(-8deg)}}
+
+/* Hero */
+.hero{text-align:center;padding-top:8px}
+.countdown-pill{
+  display:inline-flex;align-items:center;gap:8px;background:rgba(255,210,63,0.15);border:2px solid var(--gold);
+  border-radius:50px;padding:6px 18px;font-family:var(--comic);font-size:17px;letter-spacing:.08em;color:var(--gold);
+  margin-bottom:8px;text-shadow:1px 1px 0 #000;
+}
+.hero h1{font-size:clamp(48px,15vw,88px);margin:4px 0 0;line-height:.92;text-shadow:5px 5px 0 var(--red),-2px -2px 0 var(--blue)}
+.hero h1 span{color:var(--gold)}
+.pic{position:relative;margin:18px auto 0;width:min(330px,86%);transform:rotate(-2deg);cursor:pointer;transition:transform .3s ease}
+.pic:hover{transform:rotate(0deg) scale(1.02)}
+.pic img{display:block;width:100%;aspect-ratio:3/4;object-fit:cover;object-position:50% 25%;border:5px solid #fff;border-radius:14px;box-shadow:9px 9px 0 var(--red),0 0 40px var(--glow)}
+.burst{
+  position:absolute;right:-14%;top:-6%;width:34%;aspect-ratio:1;display:grid;place-items:center;font-family:var(--comic);color:#241a00;font-size:clamp(20px,6vw,30px);line-height:1;transform:rotate(12deg);
+  background:var(--gold);clip-path:polygon(50% 0,61% 18%,80% 8%,80% 30%,100% 35%,86% 52%,98% 70%,76% 74%,72% 96%,54% 84%,38% 100%,32% 78%,10% 82%,18% 60%,0 46%,20% 36%,16% 14%,38% 20%);
+  animation:pulse 2s ease-in-out infinite;
+}
+@keyframes pulse{50%{transform:rotate(14deg) scale(1.08)}}
+.hero-tag{font-family:var(--comic);font-size:20px;letter-spacing:.12em;margin-top:16px;color:var(--soft)}
+.hero-tag b{color:var(--gold);font-weight:400}
+.cta{margin-top:24px;display:flex;flex-direction:column;align-items:center;gap:10px}
+.cta small{color:var(--soft);font-size:14px;max-width:380px}
+
+/* Web-Shooter Hint */
+.web-hint{
+  background:rgba(42,79,192,0.25);border:2px dashed var(--soft);border-radius:12px;padding:10px 14px;
+  font-size:14px;color:var(--soft);margin-top:6px;display:flex;align-items:center;gap:8px;
+}
+
+/* Gallery */
+.gallery{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.card{
+  margin:0;background:#fff;color:#111;padding:8px 8px 10px;border-radius:10px;box-shadow:6px 6px 0 var(--blue);
+  transition:transform .25s, box-shadow .25s;cursor:pointer;position:relative;
+}
+.card:nth-child(1){transform:rotate(-2.5deg)}.card:nth-child(2){transform:rotate(2deg)}
+.card:hover,.card.pop{transform:rotate(0) scale(1.04);box-shadow:8px 8px 0 var(--red);z-index:2}
+.card img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:6px}
+.card:nth-child(2) img{object-position:50% 30%}
+.card figcaption{font-family:var(--comic);letter-spacing:.05em;text-align:center;margin-top:8px;font-size:18px;line-height:1.1;text-transform:uppercase}
+.card-badge{position:absolute;top:12px;right:12px;background:var(--red);color:#fff;font-family:var(--comic);font-size:12px;padding:3px 8px;border-radius:6px;box-shadow:1px 1px 0 #000}
+
+/* Photo Modal / Lightbox */
+.photo-modal{position:fixed;inset:0;z-index:250;display:flex;align-items:center;justify-content:center;padding:16px}
+.photo-modal[hidden]{display:none}
+.photo-modal-backdrop{position:absolute;inset:0;background:rgba(7,12,32,0.88);backdrop-filter:blur(8px)}
+.photo-modal-content{
+  position:relative;background:var(--navy2);border:5px solid #fff;border-radius:20px;box-shadow:12px 12px 0 var(--red),0 0 50px rgba(0,0,0,0.8);
+  max-width:440px;width:100%;max-height:92vh;overflow-y:auto;padding:24px 20px;z-index:2;animation:modalPop .3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+@keyframes modalPop{from{opacity:0;transform:scale(0.85)}to{opacity:1;transform:scale(1)}}
+.modal-close{
+  position:absolute;top:12px;right:12px;width:38px;height:38px;border-radius:50%;background:var(--red);border:2px solid #fff;
+  font-family:var(--comic);font-size:20px;color:#fff;box-shadow:0 3px 0 var(--red-d);display:grid;place-items:center;
+}
+.comic-badge{display:inline-block;background:var(--gold);color:#241a00;font-family:var(--comic);font-size:14px;letter-spacing:.06em;padding:4px 10px;border-radius:6px;margin-bottom:12px}
+.modal-img-wrap{position:relative;border:4px solid #fff;border-radius:12px;overflow:hidden;box-shadow:0 6px 16px rgba(0,0,0,0.4)}
+.modal-img-wrap img{display:block;width:100%;aspect-ratio:3/4;object-fit:cover;max-height:45vh}
+.modal-info{margin-top:16px}
+.modal-info h3{font-size:32px;margin:0 0 4px;color:var(--gold);text-shadow:2px 2px 0 var(--red)}
+.modal-info p{margin:0 0 14px;color:var(--soft);font-size:15px}
+.hero-stats{display:grid;grid-template-columns:1fr;gap:8px;background:rgba(11,19,48,0.7);padding:12px 14px;border-radius:12px;border:2px solid rgba(255,255,255,0.15);margin-bottom:16px}
+.stat{display:flex;justify-content:space-between;align-items:center;font-size:14px}
+.stat span{color:var(--soft);font-weight:600}
+.stat b{color:var(--gold);font-family:var(--comic);font-size:18px;letter-spacing:.04em}
+.modal-actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+
+/* Game */
+.hud{display:flex;justify-content:space-between;font-family:var(--comic);font-size:24px;letter-spacing:.06em;margin-bottom:12px}
+.hud b{color:var(--gold);font-weight:400}
+.combo-banner{min-height:26px;text-align:center;font-family:var(--comic);font-size:20px;color:var(--gold);letter-spacing:.06em;margin-bottom:6px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:390px;margin:0 auto}
+.hole{
+  aspect-ratio:1;border-radius:50%;border:4px solid #fff;
+  background:radial-gradient(circle at 50% 35%,#16224f,#04060f 75%);
+  box-shadow:inset 0 8px 12px rgba(0,0,0,0.8), 0 4px 0 rgba(0,0,0,0.4);
+  display:grid;place-items:center;font-size:clamp(34px,11vw,54px);padding:0;position:relative;overflow:hidden;touch-action:manipulation;
+}
+.hole::after{
+  content:"";position:absolute;inset:0;border-radius:50%;
+  background:radial-gradient(circle, transparent 60%, rgba(230,36,41,0.2) 100%);pointer-events:none;
+}
+.hole span{display:block;transform:translateY(130%);transition:transform .12s cubic-bezier(0.18, 0.89, 0.32, 1.28);filter:drop-shadow(0 4px 4px rgba(0,0,0,0.5))}
+.hole.on span{transform:translateY(0)}
+.hole.hit{background:radial-gradient(circle,#fff,#ffd23f 40%,#e62429 80%)}
+.hole.hit::before{
+  content:"🕸️";position:absolute;font-size:36px;z-index:5;animation:hitSplash .2s ease-out;
+}
+@keyframes hitSplash{0%{transform:scale(0.5)}100%{transform:scale(1.3)}}
+.score-pop{
+  position:absolute;font-family:var(--comic);font-size:28px;color:var(--gold);text-shadow:2px 2px 0 var(--red);
+  pointer-events:none;z-index:30;animation:popRise .7s ease-out forwards;
+}
+@keyframes popRise{0%{opacity:1;transform:translateY(0) scale(0.8)}100%{opacity:0;transform:translateY(-40px) scale(1.3)}}
+.game-msg{text-align:center;min-height:54px;margin:14px 0 4px;color:var(--soft);font-size:16px}
+.game-msg strong{color:var(--gold);font-family:var(--comic);font-size:28px;letter-spacing:.05em;font-weight:400;display:block}
+#startGame{display:block;margin:8px auto 0}
+
+/* Cake & Wish */
+.cake{text-align:center}
+.cake svg{width:min(340px,100%);height:auto;overflow:visible;filter:drop-shadow(0 10px 20px rgba(0,0,0,0.4))}
+.flame{transform-origin:center bottom;transform-box:fill-box;animation:flick .35s ease-in-out infinite alternate;opacity:0;transition:opacity .2s}
+.lit .flame{opacity:1;filter:drop-shadow(0 0 10px #ffd23f)}
+.lit.out .flame{opacity:0}
+@keyframes flick{from{transform:scale(1,1) rotate(-4deg)}to{transform:scale(.88,1.15) rotate(4deg)}}
+.smoke{opacity:0;fill:#cfd6f5}
+.out .smoke{animation:smoke 2s ease-out forwards}
+.out .smoke:nth-of-type(2n){animation-delay:.15s}
+@keyframes smoke{0%{opacity:.9;transform:translateY(0) scale(.5)}100%{opacity:0;transform:translateY(-70px) scale(2)}}
+#knife{transition:transform .9s cubic-bezier(.5,0,.3,1),opacity .3s;transform:translateY(-130px);opacity:0}
+#slice{transition:transform .9s .55s ease}
+.cake-msg{min-height:30px;color:var(--soft);margin:12px 0 14px;font-size:16px}
+#cakeBtn{min-width:240px}
+
+/* Secret Wish Vault */
+.wish-capsule{
+  margin:18px auto 6px;max-width:440px;background:rgba(11,19,48,0.8);border:2px dashed var(--gold);
+  border-radius:14px;padding:16px 18px;text-align:center;animation:fadeIn .4s ease;
+}
+.wish-capsule[hidden]{display:none}
+.capsule-header{margin-bottom:10px}
+.capsule-header span{display:block;font-size:20px;color:var(--gold);letter-spacing:.06em}
+.capsule-header small{color:var(--soft);font-size:13px}
+.wish-input-row{display:flex;gap:8px}
+.wish-input-row input{
+  flex:1;background:#fff;border:2px solid var(--gold);border-radius:10px;padding:10px 14px;
+  color:#111;font:600 15px var(--body);outline:none;min-width:0;
+}
+.wish-input-row input:focus{border-color:var(--red);box-shadow:0 0 10px rgba(230,36,41,0.5)}
+.wish-sealed{background:rgba(255,210,63,0.12);border-radius:10px;padding:12px;margin-top:10px}
+.sealed-badge{font-family:var(--comic);font-size:18px;color:var(--gold);letter-spacing:.06em}
+.wish-sealed p{margin:6px 0;font-weight:600;color:#fff;font-style:italic}
+.wish-sealed small{color:var(--soft)}
+
+/* Letter */
+#letterWrap{text-align:center}
+#letterWrap[hidden]{display:none}
+.env{
+  font-size:80px;line-height:1;margin:8px 0;animation:bob 1.6s ease-in-out infinite;background:none;border:0;padding:0;
+  cursor:pointer;filter:drop-shadow(0 6px 12px rgba(255,210,63,0.3));
+}
+@keyframes bob{50%{transform:translateY(-10px) scale(1.05)}}
+.letter{
+  display:none;text-align:left;background:#fffaf0;color:#221808;border:4px solid #fff;border-radius:10px;
+  padding:28px 22px;box-shadow:8px 8px 0 var(--red), 0 15px 30px rgba(0,0,0,0.5);transform:rotate(-.6deg);animation:unfold .8s ease-out;
+}
+.letter.open{display:block}
+@keyframes unfold{from{opacity:0;transform:scaleY(.2) rotate(-2deg)}to{opacity:1;transform:scaleY(1) rotate(-.6deg)}}
+.letter h3{font-family:var(--comic);font-weight:400;letter-spacing:.05em;font-size:32px;margin:0 0 10px;color:var(--red-d)}
+.letter p{margin:0 0 12px;font-size:16.5px;line-height:1.6}
+.letter ul{margin:0 0 14px;padding-left:22px}
+.letter li{margin-bottom:8px;font-size:16px;line-height:1.55}
+.letter li b{color:#9e1118}
+.letter .quote{font-family:var(--comic);letter-spacing:.04em;font-size:24px;color:var(--blue);text-align:center;margin:18px 0;line-height:1.2}
+.letter .sign{font-weight:700;margin-top:18px;font-size:17px}
+.letter-actions{margin-top:20px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+
+/* Dock */
+.dock{
+  position:fixed;left:0;right:0;bottom:0;z-index:150;display:flex;gap:8px;justify-content:center;align-items:center;
+  padding:10px 10px calc(10px + env(safe-area-inset-bottom));background:linear-gradient(transparent,rgba(7,12,32,.95) 45%);
+  backdrop-filter:blur(6px);
+}
+.dock .btn{font-size:17px;padding:8px 14px;box-shadow:0 3px 0 var(--red-d)}
+.dock .btn.blue{box-shadow:0 3px 0 #17307d}
+.dock .btn.gold{box-shadow:0 3px 0 #b38b00}
+#clearSpiders{display:none;border-radius:50%;width:40px;height:40px;padding:0;font-size:18px}
+#clearSpiders.show{display:flex}
+
+/* Roaming spiders */
+.spider{position:fixed;z-index:120;width:48px;height:48px;margin:-24px 0 0 -24px;cursor:pointer;filter:drop-shadow(0 3px 4px rgba(0,0,0,.7));touch-action:manipulation}
+.spider svg{width:100%;height:100%;transition:transform .35s}
+.spider .lg{transform-origin:20px 22px}
+.spider.walking .a{animation:legA .22s linear infinite}
+.spider.walking .b{animation:legB .22s linear infinite}
+@keyframes legA{50%{transform:rotate(14deg)}}
+@keyframes legB{50%{transform:rotate(-14deg)}}
+.spider.flip{animation:flip .6s}
+@keyframes flip{50%{transform:scale(1.5) rotate(180deg)}}
+
+/* Comic floating text badges */
+.thwip{
+  position:fixed;z-index:180;font-family:var(--comic);font-size:28px;color:var(--gold);text-shadow:3px 3px 0 var(--red);
+  pointer-events:none;animation:thw .9s forwards;filter:drop-shadow(0 4px 6px rgba(0,0,0,0.5));
+}
+@keyframes thw{from{opacity:1;transform:translateY(0) scale(.8) rotate(-6deg)}to{opacity:0;transform:translateY(-60px) scale(1.4) rotate(6deg)}}
+
+/* Web canvas overlay */
+#webCanvas{position:fixed;inset:0;width:100%;height:100%;z-index:110;pointer-events:none}
+#confetti{position:fixed;inset:0;width:100%;height:100%;z-index:170;pointer-events:none}
+
+/* Toast */
+.toast{
+  position:fixed;top:20px;left:50%;transform:translateX(-50%) translateY(-100px);z-index:300;
+  background:var(--gold);color:#241a00;border:3px solid #fff;border-radius:12px;padding:10px 20px;
+  font-family:var(--comic);font-size:18px;letter-spacing:.05em;box-shadow:0 8px 20px rgba(0,0,0,0.6);
+  transition:transform .3s cubic-bezier(0.18, 0.89, 0.32, 1.28);pointer-events:none;text-align:center;max-width:90vw;
+}
+.toast.show{transform:translateX(-50%) translateY(0)}
+
+footer{text-align:center;color:var(--soft);font-size:14px;margin-top:-6px;padding-bottom:10px}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+
+/* Responsive optimizations for smartphones & tablets */
+@media (max-width: 480px) {
+  body {
+    padding: max(14px, env(safe-area-inset-top)) 12px calc(95px + env(safe-area-inset-bottom));
+  }
+  .panel {
+    padding: 18px 14px;
+    border-width: 3px;
+    box-shadow: 6px 6px 0 var(--red);
+    border-radius: 14px;
+  }
+  .hero h1 {
+    font-size: clamp(42px, 13vw, 64px);
+  }
+  .burst {
+    right: -8%;
+    top: -4%;
+    font-size: 20px;
+  }
+  .gallery {
+    gap: 10px;
+  }
+  .card {
+    padding: 6px 6px 8px;
+    border-radius: 8px;
+    box-shadow: 4px 4px 0 var(--blue);
+  }
+  .card figcaption {
+    font-size: 15px;
+  }
+  .hud {
+    font-size: 20px;
+  }
+  .grid {
+    gap: 8px;
+  }
+  .hole {
+    border-width: 3px;
+  }
+  .dock {
+    gap: 5px;
+    padding: 6px 6px calc(8px + env(safe-area-inset-bottom));
+  }
+  .dock .btn {
+    font-size: 14px;
+    padding: 6px 9px;
+    border-radius: 10px;
+    border-width: 2px;
+  }
+  #clearSpiders {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+  }
+  .photo-modal-content {
+    padding: 18px 14px;
+    border-width: 3px;
+    box-shadow: 6px 6px 0 var(--red);
+  }
+  .modal-img-wrap img {
+    max-height: 40vh;
+  }
+  .modal-info h3 {
+    font-size: 26px;
+  }
+  .stat b {
+    font-size: 15px;
+  }
+  .letter {
+    padding: 20px 16px;
+    border-width: 3px;
+  }
+  .letter h3 {
+    font-size: 26px;
+  }
+  .letter p, .letter li {
+    font-size: 15px;
+  }
+  .wish-input-row {
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .dock {
+    gap: 8px;
+    padding: 8px 12px calc(8px + env(safe-area-inset-bottom));
+  }
+  .dock .btn {
+    font-size: 16px;
+    padding: 8px 12px;
+  }
+}
+
+@media (prefers-reduced-motion:reduce){
+  *{animation-duration:.01s!important;animation-iteration-count:1!important;transition-duration:.01s!important}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body class="locked">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="web" viewBox="0 0 200 200">
+    <g fill="none" stroke="currentColor" stroke-width="1.4">
+      <path d="M0 0 L200 0 M0 0 L200 60 M0 0 L200 130 M0 0 L170 200 M0 0 L90 200 M0 0 L0 200"/>
+      <path d="M40 0 Q34 30 0 40 M80 0 Q70 60 0 80 M120 0 Q104 90 0 120 M160 0 Q138 120 0 160 M200 0 Q170 150 0 200"/>
+    </g>
+  </symbol>
+</svg>
+
+<!-- Splash -->
+<div id="splash" role="dialog" aria-label="Welcome">
+  <svg class="web tl"><use href="#web"/></svg>
+  <svg class="web br"><use href="#web"/></svg>
+  <div class="hangspider"><i></i><svg width="56" height="56" viewBox="0 0 40 40"><use href="#spiderArt"/></svg></div>
+  <h1>A surprise<br>for <span style="color:var(--gold)">Ankan</span></h1>
+  <p>Your friendly neighbourhood mission is ready. Turn your sound on for the full web-slinging adventure 🎵</p>
+  <button class="btn" id="enter" type="button">Tap to enter 🕷️</button>
+</div>
+
+<!-- Shared spider art -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <g id="spiderArt">
+      <g class="lg a" stroke="#111" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M16 18 L6 10 L2 14"/><path d="M15 22 L4 22 L1 27"/>
+        <path d="M24 18 L34 30 L38 26"/><path d="M25 22 L36 18 L39 12"/>
+      </g>
+      <g class="lg b" stroke="#111" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M24 18 L34 10 L38 14"/><path d="M25 22 L36 22 L39 27"/>
+        <path d="M16 18 L6 30 L2 26"/><path d="M15 22 L4 18 L1 12"/>
+      </g>
+      <ellipse cx="20" cy="26" rx="7" ry="9" fill="#e62429" stroke="#111" stroke-width="1.5"/>
+      <path d="M20 19 L20 35 M14 24 H26 M15 29 H25" stroke="#111" stroke-width="1" fill="none"/>
+      <circle cx="20" cy="14" r="5.5" fill="#1b2a6b" stroke="#111" stroke-width="1.5"/>
+      <circle cx="18" cy="13" r="1.5" fill="#fff"/><circle cx="22" cy="13" r="1.5" fill="#fff"/>
+    </g>
+  </defs>
+</svg>
+
+<canvas id="webCanvas"></canvas>
+<canvas id="confetti"></canvas>
+<div id="toast" class="toast"></div>
+
+<!-- Photo Modal / Lightbox -->
+<div id="photoModal" class="photo-modal" hidden role="dialog" aria-modal="true" aria-label="Hero Dossier Viewer">
+  <div class="photo-modal-backdrop" id="modalBackdrop"></div>
+  <div class="photo-modal-content">
+    <button class="modal-close" id="modalClose" aria-label="Close photo" type="button">✕</button>
+    <div class="comic-badge" id="modalBadge">HERO DOSSIER · TOP SECRET</div>
+    <div class="modal-img-wrap">
+      <img id="modalImg" src="" alt="Hero full view">
+    </div>
+    <div class="modal-info">
+      <h3 id="modalTitle">ANKAN</h3>
+      <p id="modalDesc"></p>
+      <div class="hero-stats">
+        <div class="stat"><span>HERO LEVEL</span><b>15 / 15 ⭐</b></div>
+        <div class="stat"><span>SUPERPOWER</span><b id="modalPower">Lighting Up Every Room 🔥</b></div>
+        <div class="stat"><span>SPECIAL WEAPON</span><b>Pure Smile & Web-Shooter 🕸️</b></div>
+      </div>
+      <div class="modal-actions">
+        <button class="btn blue small" id="modalSwitch" type="button">🔄 Switch Persona</button>
+        <button class="btn gold small" id="modalThwip" type="button">🕸️ Web-Shoot</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<main id="app">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="countdown-pill" id="birthdayPill">🎂 13 October · Turning 15</div>
+    <h1>Happy<br><span>Birthday</span><br>Ankan!</h1>
+    <div class="pic" id="heroPic" title="Tap for hero dossier">
+      <img src="spidey-1.jpg" alt="Ankan in a Spider-Man suit, arms crossed and grinning">
+      <div class="burst">POW!</div>
+    </div>
+    <div class="hero-tag">BORN 2011 · <b>15 TODAY</b></div>
+    <div class="cta">
+      <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center">
+        <button class="btn blue" id="releaseBtn" type="button">🕷️ Release Spider</button>
+        <button class="btn gold" id="webShootModeBtn" type="button">🕸️ Shoot Web</button>
+      </div>
+      <div class="web-hint">
+        <span>💡 Tap anywhere on screen or spiders to shoot webs! Tap photos for hero dossier.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="panel" aria-labelledby="g-h">
+    <h2 id="g-h">Two sides of the hero</h2>
+    <p class="sub">Tap any photo to view secret hero file & dossier.</p>
+    <div class="gallery">
+      <figure class="card" data-hero="original">
+        <span class="card-badge">IDENTITY</span>
+        <img src="ankan.jpg" alt="Ankan smiling in his Flamingo Ignite t-shirt">
+        <figcaption>Ankan<br>The Original</figcaption>
+      </figure>
+      <figure class="card" data-hero="spider">
+        <span class="card-badge">HERO</span>
+        <img src="spidey-2.jpg" alt="Ankan in a Spider-Man suit holding up both hands in an alley">
+        <figcaption>Spider-Ankan<br>The Hero</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- MESSAGE -->
+  <section class="panel">
+    <h2>A note from your brother</h2>
+    <p>Ankan, your t-shirt says it best: <em>Ignite.</em> Light up this year the way you light up every room.</p>
+    <p style="margin:0">I'm lucky to have you as my brother. Today the cake is yours. Tomorrow I'm still stealing a slice. 🍕🕷️</p>
+  </section>
+
+  <!-- GAME -->
+  <section class="panel" aria-labelledby="gm-h">
+    <h2 id="gm-h">Thwip the villains!</h2>
+    <p class="sub">Villains pop out of the manholes! Tap them before they dive back. 🕷️ & ⭐ give huge bonus points! 25 seconds.</p>
+    <div class="hud">
+      <div>Score: <b id="score">0</b></div>
+      <div>Best: <b id="best">0</b></div>
+      <div>Time: <b id="time">25</b>s</div>
+    </div>
+    <div class="combo-banner" id="comboBanner" aria-live="polite"></div>
+    <div class="grid" id="grid"></div>
+    <div class="game-msg" id="gameMsg" aria-live="polite">Ready when you are, Spidey.</div>
+    <button class="btn" id="startGame" type="button">Start mission</button>
+  </section>
+
+  <!-- CAKE -->
+  <section class="panel cake" aria-labelledby="c-h">
+    <h2 id="c-h">Make a wish</h2>
+    <p class="sub">Light the candles, blow them out, seal your 15th wish, then cut the cake!</p>
+    <svg id="cakeSvg" viewBox="0 0 300 270" role="img" aria-label="A Spider-Man birthday cake with five candles">
+      <defs>
+        <g id="cakeArt">
+          <rect x="30" y="180" width="240" height="64" rx="10" fill="#e62429" stroke="#fff" stroke-width="3"/>
+          <rect x="62" y="124" width="176" height="62" rx="10" fill="#2a4fc0" stroke="#fff" stroke-width="3"/>
+          <path d="M62 138 q12 16 24 0 q12 16 24 0 q12 16 24 0 q12 16 24 0 q12 16 24 0 q12 16 24 0 q12 16 18 0 V124 H62Z" fill="#fff"/>
+          <path d="M30 194 q15 18 30 0 q15 18 30 0 q15 18 30 0 q15 18 30 0 q15 18 30 0 q15 18 30 0 q15 18 30 0 q15 18 30 0 V180 H30Z" fill="#fff"/>
+          <g stroke="#fff" stroke-width="1.6" fill="none" opacity=".55"><path d="M150 186 V244 M90 186 Q150 210 210 186 M60 244 Q150 214 240 244"/></g>
+          <text x="150" y="172" text-anchor="middle" font-family="Bangers, Impact, sans-serif" font-size="40" fill="#ffd23f" stroke="#0b1330" stroke-width="1.5" letter-spacing="3">15</text>
+          <text x="150" y="233" text-anchor="middle" font-family="Bangers, Impact, sans-serif" font-size="22" fill="#fff" letter-spacing="3">HAPPY BIRTHDAY</text>
+        </g>
+        <clipPath id="clipMain"><rect x="0" y="100" width="210" height="170"/></clipPath>
+        <clipPath id="clipSlice"><rect x="210" y="100" width="90" height="170"/></clipPath>
+      </defs>
+      <ellipse cx="150" cy="248" rx="140" ry="14" fill="#cfd6f5"/>
+      <use href="#cakeArt" clip-path="url(#clipMain)"/>
+      <use href="#cakeArt" clip-path="url(#clipSlice)" id="slice"/>
+      <g id="candles">
+        <g><rect x="92" y="92" width="8" height="34" fill="#ffd23f" stroke="#fff" stroke-width="1.5"/><path class="flame" d="M96 66 C104 78 104 86 96 90 C88 86 88 78 96 66Z" fill="#ff8a1a"/></g>
+        <g><rect x="121" y="92" width="8" height="34" fill="#fff" stroke="#e62429" stroke-width="1.5"/><path class="flame" d="M125 66 C133 78 133 86 125 90 C117 86 117 78 125 66Z" fill="#ff8a1a"/></g>
+        <g><rect x="146" y="88" width="8" height="38" fill="#ffd23f" stroke="#fff" stroke-width="1.5"/><path class="flame" d="M150 62 C158 74 158 82 150 86 C142 82 142 74 150 62Z" fill="#ff8a1a"/></g>
+        <g><rect x="171" y="92" width="8" height="34" fill="#fff" stroke="#e62429" stroke-width="1.5"/><path class="flame" d="M175 66 C183 78 183 86 175 90 C167 86 167 78 175 66Z" fill="#ff8a1a"/></g>
+        <g><rect x="200" y="92" width="8" height="34" fill="#ffd23f" stroke="#fff" stroke-width="1.5"/><path class="flame" d="M204 66 C212 78 212 86 204 90 C196 86 196 78 204 66Z" fill="#ff8a1a"/></g>
+      </g>
+      <g id="smokes">
+        <circle class="smoke" cx="96" cy="70" r="7"/><circle class="smoke" cx="125" cy="66" r="7"/><circle class="smoke" cx="150" cy="60" r="8"/><circle class="smoke" cx="175" cy="66" r="7"/><circle class="smoke" cx="204" cy="70" r="7"/>
+      </g>
+      <g id="knife" transform-box="fill-box">
+        <rect x="205" y="-10" width="8" height="48" fill="#6b4a2b" rx="3"/>
+        <path d="M205 38 H213 V150 L205 160 Z" fill="#e8ecf5" stroke="#8c96b8" stroke-width="1.5"/>
+      </g>
+    </svg>
+
+    <!-- Secret Wish Vault -->
+    <div class="wish-capsule" id="wishCapsule" hidden>
+      <div class="capsule-header">
+        <span class="comic">🔒 Secret 15th Birthday Wish Vault</span>
+        <small>Type your secret wish below (it will be sealed in the Spider-Verse vault):</small>
+      </div>
+      <div class="wish-input-row" id="wishForm">
+        <input type="text" id="wishInput" placeholder="My wish for 15 is..." maxlength="80" autocomplete="off">
+        <button class="btn gold small" id="saveWishBtn" type="button">Seal Wish 🌟</button>
+      </div>
+      <div class="wish-sealed" id="wishSealed" hidden>
+        <div class="sealed-badge">✨ WISH SEALED IN HERO VAULT ✨</div>
+        <p id="sealedText"></p>
+        <small>Only you know your secret superpower wish! Now cut the cake!</small>
+      </div>
+    </div>
+
+    <div class="cake-msg" id="cakeMsg" aria-live="polite">Tap the button to light the candles.</div>
+    <button class="btn gold" id="cakeBtn" type="button">Light the candles 🔥</button>
+  </section>
+
+  <!-- LETTER -->
+  <section id="letterWrap" class="panel" hidden aria-labelledby="l-h">
+    <h2 id="l-h">One last thing...</h2>
+    <p class="sub">A wish letter just for you. Tap the envelope to open.</p>
+    <button class="env" id="envelope" aria-label="Open your wish letter" type="button">✉️</button>
+    <div class="letter" id="letter">
+      <h3>Dear Ankan,</h3>
+      <p>Happy 15th birthday, Spider-Man! 🎉 You are not a kid who needs a mask to be a hero. You are one already, to me and to everyone who loves you.</p>
+      <div class="quote">"With great power comes great responsibility."</div>
+      <p>Your power is your time, your mind and your energy. Spend them wisely. My wishes for you this year:</p>
+      <ul>
+        <li><b>Work hard.</b> Talent opens a door. Hard work keeps you in the room. Do a little more than yesterday, every day.</li>
+        <li><b>Fall and swing again.</b> Even Spider-Man misses a web sometimes. What matters is that you get back up and try again.</li>
+        <li><b>Dream big.</b> Bigger than this city and bigger than what anyone expects of you. Then build the ladder one step at a time.</li>
+        <li><b>Stay kind and stay curious.</b> It's the real superpower.</li>
+      </ul>
+      <p>Whatever you choose to become, I'll be right behind you, cheering the loudest.</p>
+      <p class="sign">Love you always,<br>Your brother 🕷️❤️</p>
+
+      <div class="letter-actions">
+        <button class="btn gold small" id="rainConfettiBtn" type="button">🎉 Celebrate More</button>
+        <button class="btn blue small" id="shareSiteBtn" type="button">🎁 Share Birthday Love</button>
+      </div>
+    </div>
+  </section>
+
+  <footer>Made with ❤️ for Ankan · Happy 15th Birthday!</footer>
+</main>
+
+<!-- Bottom Dock -->
+<div class="dock">
+  <button class="btn blue" id="dockSpider" aria-label="Release a spider" type="button">🕷️ Spider <span id="spCount"></span></button>
+  <button class="btn" id="clearSpiders" aria-label="Remove all spiders" title="Remove spiders" type="button">✕</button>
+  <button class="btn gold" id="dockWeb" aria-label="Toggle web shooter" type="button">🕸️ Web</button>
+  <button class="btn" id="sfxBtn" aria-label="Toggle Sound Effects" type="button">🔊 SFX</button>
+  <button class="btn" id="musicBtn" aria-pressed="true" aria-label="Pause music" type="button">⏸ Music</button>
+</div>
+
+<audio id="bgm" src="music.mp3" loop preload="auto"></audio>
+
+<script>
+(function () {
+  var $ = function (s) { return document.querySelector(s); };
+  var $$ = function (s) { return document.querySelectorAll(s); };
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- Birthday Countdown / Date Badge ---------- */
+  (function updateBirthdayStatus() {
+    var pill = $('#birthdayPill');
+    if (!pill) return;
+    var now = new Date();
+    // October is month 9 (0-indexed)
+    if (now.getMonth() === 9 && now.getDate() === 13) {
+      pill.textContent = '🎉 TODAY IS ANKAN\'S 15TH BIRTHDAY! 🎂';
+    } else {
+      pill.textContent = '🎂 13 October · Turning 15';
+    }
+  })();
+
+  /* ---------- Synthesized Web Audio SFX Engine ---------- */
+  var SoundFX = (function () {
+    var ctx = null;
+    var sfxEnabled = true;
+
+    function init() {
+      try {
+        if (!ctx) {
+          var AC = window.AudioContext || window.webkitAudioContext;
+          if (AC) ctx = new AC();
+        }
+        if (ctx && ctx.state === 'suspended') {
+          ctx.resume();
+        }
+      } catch (e) {}
+    }
+
+    function playThwip() {
+      if (!sfxEnabled || !ctx) return;
+      try {
+        var now = ctx.currentTime;
+        var osc = ctx.createOscillator();
+        var gain = ctx.createGain();
+        var filter = ctx.createBiquadFilter();
+
+        filter.type = 'bandpass';
+        filter.frequency.setValueAtTime(1700, now);
+        filter.frequency.exponentialRampToValueAtTime(320, now + 0.12);
+        filter.Q.value = 3.5;
+
+        osc.type = 'sawtooth';
+        osc.frequency.setValueAtTime(850, now);
+        osc.frequency.exponentialRampToValueAtTime(140, now + 0.12);
+
+        gain.gain.setValueAtTime(0.3, now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.12);
+
+        osc.connect(filter);
+        filter.connect(gain);
+        gain.connect(ctx.destination);
+
+        osc.start(now);
+        osc.stop(now + 0.13);
+      } catch (e) {}
+    }
+
+    function playPunch() {
+      if (!sfxEnabled || !ctx) return;
+      try {
+        var now = ctx.currentTime;
+        var osc = ctx.createOscillator();
+        var gain = ctx.createGain();
+
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(190, now);
+        osc.frequency.exponentialRampToValueAtTime(45, now + 0.14);
+
+        gain.gain.setValueAtTime(0.35, now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.14);
+
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+
+        osc.start(now);
+        osc.stop(now + 0.15);
+      } catch (e) {}
+    }
+
+    function playSparkle() {
+      if (!sfxEnabled || !ctx) return;
+      try {
+        var notes = [587.33, 880, 1174.66, 1760];
+        var now = ctx.currentTime;
+        notes.forEach(function (freq, i) {
+          var osc = ctx.createOscillator();
+          var gain = ctx.createGain();
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(freq, now + i * 0.05);
+
+          gain.gain.setValueAtTime(0.001, now + i * 0.05);
+          gain.gain.linearRampToValueAtTime(0.18, now + i * 0.05 + 0.02);
+          gain.gain.exponentialRampToValueAtTime(0.001, now + i * 0.05 + 0.22);
+
+          osc.connect(gain);
+          gain.connect(ctx.destination);
+
+          osc.start(now + i * 0.05);
+          osc.stop(now + i * 0.05 + 0.24);
+        });
+      } catch (e) {}
+    }
+
+    function playFlame() {
+      if (!sfxEnabled || !ctx) return;
+      try {
+        var now = ctx.currentTime;
+        var osc = ctx.createOscillator();
+        var gain = ctx.createGain();
+
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(150, now);
+        osc.frequency.linearRampToValueAtTime(320, now + 0.25);
+
+        gain.gain.setValueAtTime(0.01, now);
+        gain.gain.linearRampToValueAtTime(0.2, now + 0.08);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.32);
+
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+
+        osc.start(now);
+        osc.stop(now + 0.34);
+      } catch (e) {}
+    }
+
+    function playBlow() {
+      if (!sfxEnabled || !ctx) return;
+      try {
+        var now = ctx.currentTime;
+        var osc = ctx.createOscillator();
+        var gain = ctx.createGain();
+
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(260, now);
+        osc.frequency.exponentialRampToValueAtTime(70, now + 0.4);
+
+        gain.gain.setValueAtTime(0.22, now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.42);
+
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+
+        osc.start(now);
+        osc.stop(now + 0.44);
+      } catch (e) {}
+    }
+
+    function playFanfare() {
+      if (!sfxEnabled || !ctx) return;
+      try {
+        var chords = [
+          { f: 523.25, t: 0 },
+          { f: 659.25, t: 0.12 },
+          { f: 783.99, t: 0.24 },
+          { f: 1046.50, t: 0.38 }
+        ];
+        var now = ctx.currentTime;
+        chords.forEach(function (c) {
+          var osc = ctx.createOscillator();
+          var gain = ctx.createGain();
+          osc.type = 'triangle';
+          osc.frequency.setValueAtTime(c.f, now + c.t);
+
+          gain.gain.setValueAtTime(0.22, now + c.t);
+          gain.gain.exponentialRampToValueAtTime(0.001, now + c.t + 0.4);
+
+          osc.connect(gain);
+          gain.connect(ctx.destination);
+
+          osc.start(now + c.t);
+          osc.stop(now + c.t + 0.42);
+        });
+      } catch (e) {}
+    }
+
+    return {
+      init: init,
+      toggle: function () {
+        sfxEnabled = !sfxEnabled;
+        return sfxEnabled;
+      },
+      isEnabled: function () { return sfxEnabled; },
+      playThwip: playThwip,
+      playPunch: playPunch,
+      playSparkle: playSparkle,
+      playFlame: playFlame,
+      playBlow: playBlow,
+      playFanfare: playFanfare
+    };
+  })();
+
+  /* ---------- Toast Helper ---------- */
+  var toastTimer = null;
+  function showToast(text) {
+    var t = $('#toast');
+    t.textContent = text;
+    t.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () { t.classList.remove('show'); }, 2400);
+  }
+
+  /* ---------- Splash + Music ---------- */
+  var bgm = $('#bgm'), musicBtn = $('#musicBtn'), sfxBtn = $('#sfxBtn');
+  bgm.volume = 0.6;
+  function setMusicUI() {
+    var playing = !bgm.paused;
+    musicBtn.textContent = playing ? '⏸ Music' : '▶ Music';
+    musicBtn.setAttribute('aria-pressed', playing ? 'true' : 'false');
+    musicBtn.setAttribute('aria-label', playing ? 'Pause music' : 'Play music');
+  }
+  $('#enter').addEventListener('click', function () {
+    SoundFX.init();
+    SoundFX.playFanfare();
+    var p = bgm.play(); if (p && p.catch) p.catch(function () {});
+    $('#splash').classList.add('gone');
+    document.body.classList.remove('locked');
+    setTimeout(setMusicUI, 200);
+    setTimeout(function () { burst(70); }, 350);
+  });
+  musicBtn.addEventListener('click', function () {
+    SoundFX.init();
+    if (bgm.paused) { var p = bgm.play(); if (p && p.catch) p.catch(function () {}); } else { bgm.pause(); }
+    setTimeout(setMusicUI, 50);
+  });
+  bgm.addEventListener('play', setMusicUI); bgm.addEventListener('pause', setMusicUI);
+  setMusicUI();
+
+  sfxBtn.addEventListener('click', function () {
+    SoundFX.init();
+    var on = SoundFX.toggle();
+    sfxBtn.textContent = on ? '🔊 SFX' : '🔇 SFX';
+    showToast(on ? 'Sound Effects: ON 🔊' : 'Sound Effects: MUTED 🔇');
+    if (on) SoundFX.playThwip();
+  });
+
+  /* ---------- Confetti Canvas ---------- */
+  var cv = $('#confetti'), cx = cv.getContext('2d'), parts = [], raf = 0;
+  function size() {
+    cv.width = innerWidth; cv.height = innerHeight;
+    webCv.width = innerWidth; webCv.height = innerHeight;
+  }
+  addEventListener('resize', size);
+  function burst(n, originX, originY) {
+    var cols = ['#e62429', '#2a4fc0', '#ffd23f', '#ffffff', '#ff8a1a'];
+    var ox = originX !== undefined ? originX : innerWidth / 2;
+    var oy = originY !== undefined ? originY : innerHeight * 0.45;
+    for (var i = 0; i < n; i++) {
+      parts.push({
+        x: ox, y: oy,
+        vx: (Math.random() - .5) * 16,
+        vy: Math.random() * -14 - 4,
+        g: .36,
+        s: 5 + Math.random() * 7,
+        c: cols[i % cols.length],
+        r: Math.random() * 6,
+        vr: (Math.random() - .5) * .4,
+        life: 120 + Math.random() * 60
+      });
+    }
+    if (!raf) raf = requestAnimationFrame(tick);
+  }
+  function tick() {
+    cx.clearRect(0, 0, cv.width, cv.height);
+    parts = parts.filter(function (p) { return p.life > 0 && p.y < cv.height + 20; });
+    parts.forEach(function (p) {
+      p.vy += p.g; p.x += p.vx; p.y += p.vy; p.r += p.vr; p.life--;
+      cx.save(); cx.translate(p.x, p.y); cx.rotate(p.r); cx.fillStyle = p.c;
+      cx.fillRect(-p.s / 2, -p.s / 4, p.s, p.s / 2); cx.restore();
+    });
+    raf = parts.length ? requestAnimationFrame(tick) : 0;
+    if (!parts.length) cx.clearRect(0, 0, cv.width, cv.height);
+  }
+
+  /* ---------- Interactive Web-Shooter Canvas ---------- */
+  var webCv = $('#webCanvas'), wcx = webCv.getContext('2d'), webs = [], webRaf = 0;
+  size();
+
+  function shootWeb(tx, ty) {
+    SoundFX.init();
+    SoundFX.playThwip();
+    thwip(tx, ty);
+
+    var startFromLeft = tx < innerWidth / 2;
+    var sx = startFromLeft ? 20 : innerWidth - 20;
+    var sy = innerHeight - 20;
+
+    webs.push({
+      sx: sx, sy: sy, tx: tx, ty: ty,
+      life: 28, maxLife: 28,
+      spokes: 8, radius: 45 + Math.random() * 25
+    });
+
+    if (!webRaf) webRaf = requestAnimationFrame(tickWebs);
+  }
+
+  function tickWebs() {
+    wcx.clearRect(0, 0, webCv.width, webCv.height);
+    webs = webs.filter(function (w) { return w.life > 0; });
+    webs.forEach(function (w) {
+      var progress = 1 - (w.life / w.maxLife);
+      var alpha = (w.life / w.maxLife);
+
+      wcx.save();
+      wcx.strokeStyle = 'rgba(255, 255, 255, ' + (alpha * 0.9) + ')';
+      wcx.lineWidth = 2.4;
+      wcx.shadowColor = 'rgba(42, 79, 192, 0.8)';
+      wcx.shadowBlur = 6;
+
+      // Main web strand
+      wcx.beginPath();
+      wcx.moveTo(w.sx, w.sy);
+      var cx1 = (w.sx + w.tx) / 2 + (w.sx > w.tx ? 40 : -40);
+      var cy1 = (w.sy + w.ty) / 2;
+      wcx.quadraticCurveTo(cx1, cy1, w.tx, w.ty);
+      wcx.stroke();
+
+      // Splat web burst at destination
+      wcx.lineWidth = 1.6;
+      for (var i = 0; i < w.spokes; i++) {
+        var angle = (i / w.spokes) * Math.PI * 2;
+        var r = w.radius * Math.min(1, progress * 2.5);
+        var px = w.tx + Math.cos(angle) * r;
+        var py = w.ty + Math.sin(angle) * r;
+        wcx.beginPath();
+        wcx.moveTo(w.tx, w.ty);
+        wcx.lineTo(px, py);
+        wcx.stroke();
+
+        // Connecting web spiral arcs
+        if (i % 2 === 0) {
+          var nextAngle = ((i + 1) / w.spokes) * Math.PI * 2;
+          var npx = w.tx + Math.cos(nextAngle) * (r * 0.7);
+          var npy = w.ty + Math.sin(nextAngle) * (r * 0.7);
+          wcx.beginPath();
+          wcx.moveTo(px, py);
+          wcx.lineTo(npx, npy);
+          wcx.stroke();
+        }
+      }
+
+      wcx.restore();
+      w.life--;
+    });
+    webRaf = webs.length ? requestAnimationFrame(tickWebs) : 0;
+    if (!webs.length) wcx.clearRect(0, 0, webCv.width, webCv.height);
+  }
+
+  function thwip(x, y, customText) {
+    var t = document.createElement('div');
+    t.className = 'thwip';
+    t.textContent = customText || ['THWIP!', 'POW!', 'ZAP!', 'WHAM!', 'BAM!'][Math.floor(Math.random() * 5)];
+    t.style.left = Math.max(10, Math.min(innerWidth - 100, x - 35)) + 'px';
+    t.style.top = Math.max(20, Math.min(innerHeight - 80, y - 45)) + 'px';
+    document.body.appendChild(t);
+    setTimeout(function () { t.remove(); }, 900);
+  }
+
+  // Shoot web when clicking on background or with Web Mode
+  var webMode = false;
+  function toggleWebMode() {
+    webMode = !webMode;
+    $('#dockWeb').classList.toggle('gold', !webMode);
+    $('#dockWeb').classList.toggle('blue', webMode);
+    $('#dockWeb').textContent = webMode ? '🕸️ ON!' : '🕸️ Web';
+    showToast(webMode ? 'Web-Shooter: Tap anywhere to THWIP! 🕸️' : 'Web-Shooter Mode toggled');
+  }
+  $('#dockWeb').addEventListener('click', toggleWebMode);
+  $('#webShootModeBtn').addEventListener('click', function (e) {
+    e.stopPropagation();
+    shootWeb(innerWidth / 2, innerHeight * 0.35);
+    burst(25, innerWidth / 2, innerHeight * 0.35);
+  });
+
+  // Global background click for web shooting
+  document.addEventListener('click', function (e) {
+    if (e.target.closest('button, input, a, .card, .hole, .spider, .photo-modal-content, #heroPic, #envelope')) return;
+    if (webMode || Math.random() < 0.4) {
+      shootWeb(e.clientX, e.clientY);
+    }
+  });
+
+  /* ---------- Roaming Spiders ---------- */
+  var spiders = [], MAX = 6;
+  var SVGNS = '<svg viewBox="0 0 40 40"><use href="#spiderArt"/></svg>';
+  function spCountUI() {
+    $('#spCount').textContent = spiders.length ? '(' + spiders.length + ')' : '';
+    $('#clearSpiders').classList.toggle('show', spiders.length > 0);
+  }
+  function addSpider() {
+    SoundFX.init();
+    if (spiders.length >= MAX) {
+      burst(25);
+      showToast('Maximum spiders reached! 🕷️');
+      return;
+    }
+    var el = document.createElement('div'); el.className = 'spider'; el.innerHTML = SVGNS;
+    var s = { el: el, timer: 0, x: 0, y: 0 };
+    var edge = Math.random() < .5;
+    s.x = edge ? (Math.random() < .5 ? -30 : innerWidth + 30) : Math.random() * innerWidth;
+    s.y = edge ? Math.random() * innerHeight : (Math.random() < .5 ? -30 : innerHeight + 30);
+    el.style.left = s.x + 'px'; el.style.top = s.y + 'px';
+    document.body.appendChild(el);
+    el.addEventListener('click', function (e) {
+      e.stopPropagation();
+      SoundFX.init();
+      SoundFX.playThwip();
+      el.classList.remove('flip'); void el.offsetWidth; el.classList.add('flip');
+      shootWeb(e.clientX, e.clientY);
+      burst(18, e.clientX, e.clientY);
+    });
+    spiders.push(s); spCountUI();
+    setTimeout(function () { walk(s); }, 60);
+  }
+  function walk(s) {
+    if (spiders.indexOf(s) < 0) return;
+    var tx = 30 + Math.random() * (innerWidth - 60), ty = 30 + Math.random() * (innerHeight - 140);
+    var dx = tx - s.x, dy = ty - s.y, dist = Math.sqrt(dx * dx + dy * dy);
+    var dur = Math.max(900, dist / (reduce ? 60 : 130) * 1000);
+    var ang = Math.atan2(dy, dx) * 180 / Math.PI + 90;
+    var svgEl = s.el.querySelector('svg');
+    if (svgEl) svgEl.style.transform = 'rotate(' + ang + 'deg)';
+    s.el.style.transition = 'left ' + dur + 'ms linear, top ' + dur + 'ms linear';
+    s.el.classList.add('walking');
+    s.el.style.left = tx + 'px'; s.el.style.top = ty + 'px'; s.x = tx; s.y = ty;
+    s.timer = setTimeout(function () {
+      s.el.classList.remove('walking');
+      s.timer = setTimeout(function () { walk(s); }, 400 + Math.random() * 1400);
+    }, dur);
+  }
+  function clearSpiders() {
+    spiders.forEach(function (s) { clearTimeout(s.timer); s.el.remove(); });
+    spiders = []; spCountUI();
+    showToast('Spiders cleared! 🕷️');
+  }
+  $('#releaseBtn').addEventListener('click', addSpider);
+  $('#dockSpider').addEventListener('click', addSpider);
+  $('#clearSpiders').addEventListener('click', clearSpiders);
+
+  /* ---------- Photo Dossier Modal / Lightbox ---------- */
+  var photoModal = $('#photoModal'), modalImg = $('#modalImg'), modalTitle = $('#modalTitle');
+  var modalDesc = $('#modalDesc'), modalPower = $('#modalPower'), modalClose = $('#modalClose');
+  var modalBackdrop = $('#modalBackdrop'), modalSwitch = $('#modalSwitch'), modalThwip = $('#modalThwip');
+  var currentHeroMode = 'original';
+
+  var HERO_DATA = {
+    original: {
+      title: 'ANKAN · THE ORIGINAL',
+      img: 'ankan.jpg',
+      alt: 'Ankan in his Ignite t-shirt',
+      desc: 'Secret civilian identity. Known for a 1000-watt smile, unstoppable curiosity, and wearing that iconic Flamingo Ignite shirt.',
+      power: 'Radiant Joy & Room Igniter 🔥'
+    },
+    spider: {
+      title: 'SPIDER-ANKAN · THE HERO',
+      img: 'spidey-2.jpg',
+      alt: 'Ankan in Spider-Man suit ready to swing',
+      desc: 'The neighborhood web-slinger. Armed with quick reflexes, fearless brotherly love, and ready to take on 15 with style.',
+      power: 'Web-Slinging & Unshakable Heart 🕸️'
+    }
+  };
+
+  function openHeroModal(heroType) {
+    SoundFX.init();
+    SoundFX.playSparkle();
+    currentHeroMode = heroType;
+    var data = HERO_DATA[heroType];
+    modalImg.src = data.img;
+    modalImg.alt = data.alt;
+    modalTitle.textContent = data.title;
+    modalDesc.textContent = data.desc;
+    modalPower.textContent = data.power;
+    photoModal.hidden = false;
+  }
+  function closeHeroModal() {
+    photoModal.hidden = true;
+  }
+  modalClose.addEventListener('click', closeHeroModal);
+  modalBackdrop.addEventListener('click', closeHeroModal);
+  modalSwitch.addEventListener('click', function () {
+    var next = currentHeroMode === 'original' ? 'spider' : 'original';
+    openHeroModal(next);
+  });
+  modalThwip.addEventListener('click', function () {
+    var r = modalImg.getBoundingClientRect();
+    shootWeb(r.left + r.width / 2, r.top + r.height / 2);
+    burst(20, r.left + r.width / 2, r.top + r.height / 2);
+  });
+
+  $('#heroPic').addEventListener('click', function (e) {
+    e.stopPropagation();
+    openHeroModal('spider');
+  });
+
+  $$('.card').forEach(function (c) {
+    c.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var hero = c.getAttribute('data-hero') || 'original';
+      c.classList.toggle('pop');
+      burst(20);
+      setTimeout(function () { openHeroModal(hero); }, 150);
+    });
+  });
+
+  /* ---------- Whack-A-Mole Game ("Thwip the Villains!") ---------- */
+  var grid = $('#grid'), holes = [], score = 0, time = 25, running = false;
+  var tickT = 0, popT = 0, best = 0, combo = 0, comboTimer = 0;
+
+  try { best = parseInt(localStorage.getItem('ankanBest') || '0', 10) || 0; } catch (e) {}
+  $('#best').textContent = best;
+
+  var VILLAINS = [
+    { icon: '🎃', name: 'Green Goblin', pts: 1, sound: 'punch' },
+    { icon: '🐙', name: 'Doc Ock', pts: 1, sound: 'punch' },
+    { icon: '⚡', name: 'Electro', pts: 1, sound: 'punch' },
+    { icon: '🖤', name: 'Venom', pts: 2, sound: 'punch' },
+    { icon: '🕷️', name: 'Golden Spider', pts: 3, sound: 'sparkle' },
+    { icon: '⭐', name: 'Cosmic Star', pts: 5, sound: 'sparkle' }
+  ];
+
+  for (var i = 0; i < 9; i++) {
+    var h = document.createElement('button');
+    h.className = 'hole';
+    h.type = 'button';
+    h.setAttribute('aria-label', 'Manhole ' + (i + 1));
+    h.innerHTML = '<span></span>';
+    grid.appendChild(h);
+    holes.push({ el: h, on: false, villain: null, t: 0 });
+  }
+
+  function spawnScorePop(el, pts) {
+    var r = el.getBoundingClientRect();
+    var p = document.createElement('div');
+    p.className = 'score-pop';
+    p.textContent = '+' + pts;
+    p.style.left = (r.left + r.width / 2 - 15) + 'px';
+    p.style.top = (r.top + 10) + 'px';
+    document.body.appendChild(p);
+    setTimeout(function () { p.remove(); }, 700);
+  }
+
+  holes.forEach(function (H) {
+    H.el.addEventListener('pointerdown', function (e) {
+      e.preventDefault();
+      if (!running || !H.on) return;
+      SoundFX.init();
+
+      var pts = H.villain.pts;
+      combo++;
+      clearTimeout(comboTimer);
+      comboTimer = setTimeout(function () {
+        combo = 0;
+        $('#comboBanner').textContent = '';
+      }, 1600);
+
+      if (combo >= 5) {
+        pts += 2;
+        $('#comboBanner').textContent = '⚡ SPIDEY SENSE x' + combo + '! (+2 BONUS)';
+      } else if (combo >= 3) {
+        pts += 1;
+        $('#comboBanner').textContent = '🔥 COMBO x' + combo + '! (+1 BONUS)';
+      }
+
+      score += pts;
+      $('#score').textContent = score;
+
+      if (H.villain.sound === 'sparkle') {
+        SoundFX.playSparkle();
+        burst(14);
+      } else {
+        SoundFX.playPunch();
+      }
+
+      spawnScorePop(H.el, pts);
+      hide(H);
+      H.el.classList.add('hit');
+      setTimeout(function () { H.el.classList.remove('hit'); }, 180);
+
+      var r = H.el.getBoundingClientRect();
+      if (pts >= 3) {
+        thwip(r.left + r.width / 2, r.top, H.villain.name.toUpperCase() + '!');
+      }
+    });
+  });
+
+  function hide(H) {
+    H.on = false;
+    clearTimeout(H.t);
+    H.el.classList.remove('on');
+  }
+
+  function pop() {
+    if (!running) return;
+    var free = holes.filter(function (H) { return !H.on; });
+    if (!free.length) {
+      popT = setTimeout(pop, 300);
+      return;
+    }
+    var H = free[Math.floor(Math.random() * free.length)];
+
+    var rand = Math.random();
+    var v;
+    if (rand < 0.08) {
+      v = VILLAINS[5]; // Star
+    } else if (rand < 0.20) {
+      v = VILLAINS[4]; // Golden Spider
+    } else if (rand < 0.40) {
+      v = VILLAINS[3]; // Venom
+    } else {
+      v = VILLAINS[Math.floor(Math.random() * 3)]; // Goblin, Doc Ock, Electro
+    }
+
+    H.villain = v;
+    H.on = true;
+    H.el.firstChild.textContent = v.icon;
+    H.el.classList.add('on');
+
+    H.t = setTimeout(function () { hide(H); }, 950);
+    popT = setTimeout(pop, 420 + Math.random() * 320);
+  }
+
+  function endGame() {
+    running = false;
+    clearInterval(tickT);
+    clearTimeout(popT);
+    clearTimeout(comboTimer);
+    holes.forEach(hide);
+    $('#comboBanner').textContent = '';
+
+    var title = score >= 35 ? 'Avenger-Level Legend! 🏆' :
+                score >= 25 ? 'Master Web-Slinger! 🕷️' :
+                score >= 15 ? 'Pro Neighborhood Hero! ⭐' :
+                'Rookie Spider-Man! Swing Again! 🕸️';
+
+    if (score > best) {
+      best = score;
+      $('#best').textContent = best;
+      try { localStorage.setItem('ankanBest', String(best)); } catch (e) {}
+      showToast('New Personal Record! 🌟');
+    }
+
+    $('#gameMsg').innerHTML = '<strong>' + title + '</strong>You scored ' + score + ' points.';
+    $('#startGame').disabled = false;
+    $('#startGame').textContent = 'Play again';
+    SoundFX.playFanfare();
+    if (score >= 15) burst(70);
+  }
+
+  $('#startGame').addEventListener('click', function () {
+    SoundFX.init();
+    SoundFX.playThwip();
+    score = 0; time = 25; running = true; combo = 0;
+    $('#score').textContent = 0;
+    $('#time').textContent = time;
+    $('#comboBanner').textContent = '';
+    $('#gameMsg').textContent = 'Go go go! Thwip those villains!';
+    this.disabled = true;
+    tickT = setInterval(function () {
+      time--;
+      $('#time').textContent = time;
+      if (time <= 0) endGame();
+    }, 1000);
+    pop();
+  });
+
+  /* ---------- Cake & Secret Wish Vault ---------- */
+  var svg = $('#cakeSvg'), btn = $('#cakeBtn'), msg = $('#cakeMsg'), stage = 0;
+  var knife = $('#knife'), slice = $('#slice');
+  var wishCapsule = $('#wishCapsule'), wishInput = $('#wishInput'), saveWishBtn = $('#saveWishBtn');
+  var wishForm = $('#wishForm'), wishSealed = $('#wishSealed'), sealedText = $('#sealedText');
+
+  // Load existing wish if saved
+  try {
+    var savedWish = localStorage.getItem('ankanSecretWish');
+    if (savedWish) {
+      sealedText.textContent = '"' + savedWish + '"';
+      wishForm.hidden = true;
+      wishSealed.hidden = false;
+    }
+  } catch (e) {}
+
+  saveWishBtn.addEventListener('click', function () {
+    SoundFX.init();
+    var text = wishInput.value.trim();
+    if (!text) {
+      showToast('Please type your secret wish first! ✨');
+      return;
+    }
+    SoundFX.playSparkle();
+    burst(40);
+    try { localStorage.setItem('ankanSecretWish', text); } catch (e) {}
+    sealedText.textContent = '"' + text + '"';
+    wishForm.hidden = true;
+    wishSealed.hidden = false;
+    showToast('Secret Wish Sealed! 🔒');
+  });
+
+  btn.addEventListener('click', function () {
+    SoundFX.init();
+    if (stage === 0) {
+      // Light candles
+      SoundFX.playFlame();
+      svg.classList.add('lit');
+      stage = 1;
+      btn.textContent = 'Blow them out 💨';
+      msg.textContent = 'Close your eyes. Make your biggest 15th birthday wish...';
+    } else if (stage === 1) {
+      // Blow out
+      SoundFX.playBlow();
+      svg.classList.add('out');
+      stage = 2;
+      burst(85);
+      msg.textContent = 'Wish made! Lock it into the vault below, then cut the cake.';
+      btn.textContent = 'Cut the cake 🔪';
+      wishCapsule.hidden = false;
+    } else if (stage === 2) {
+      // Cut cake
+      stage = 3;
+      btn.disabled = true;
+      msg.textContent = 'Slicing the hero cake...';
+      SoundFX.playThwip();
+      knife.style.opacity = '1';
+      knife.style.transform = 'translateY(70px)';
+      slice.style.transformOrigin = '240px 240px';
+
+      setTimeout(function () {
+        slice.style.transform = 'translate(30px,10px) rotate(7deg)';
+      }, 100);
+
+      setTimeout(function () {
+        knife.style.transform = 'translateY(-130px)';
+        knife.style.opacity = '0';
+        SoundFX.playFanfare();
+        burst(130);
+        msg.textContent = 'Happy Birthday, Ankan! 🎂 Enjoy your day!';
+        var L = $('#letterWrap');
+        L.hidden = false;
+        btn.textContent = 'Yum! 🎂';
+        setTimeout(function () {
+          L.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' });
+        }, 900);
+      }, 1500);
+    }
+  });
+
+  /* ---------- Envelope & Letter ---------- */
+  $('#envelope').addEventListener('click', function (e) {
+    e.stopPropagation();
+    SoundFX.init();
+    SoundFX.playFanfare();
+    this.style.display = 'none';
+    $('#letter').classList.add('open');
+    burst(60);
+    setTimeout(function () {
+      $('#letter').scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+    }, 100);
+  });
+
+  $('#rainConfettiBtn').addEventListener('click', function () {
+    SoundFX.init();
+    SoundFX.playSparkle();
+    burst(100);
+    showToast('🎉 Extra birthday cheer!');
+  });
+
+  /* ---------- Share Feature ---------- */
+  function shareBirthdaySite() {
+    SoundFX.init();
+    SoundFX.playThwip();
+    var shareData = {
+      title: 'Happy 15th Birthday Ankan! 🕷️',
+      text: 'Check out Ankan\'s special Spider-Man birthday surprise site!',
+      url: window.location.href
+    };
+    if (navigator.share) {
+      navigator.share(shareData).catch(function () {});
+    } else {
+      try {
+        navigator.clipboard.writeText(window.location.href).then(function () {
+          showToast('🔗 Birthday link copied to clipboard!');
+        });
+      } catch (e) {
+        showToast('🔗 Share this URL with Ankan!');
+      }
+    }
+  }
+  $('#shareSiteBtn').addEventListener('click', shareBirthdaySite);
+
+})();
+</script>
+</body>
+</html>
